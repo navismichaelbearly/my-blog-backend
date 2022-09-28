@@ -1,7 +1,13 @@
-mongod --port 27017 --dbpath C:\MongoDB\data\db
-mongo
-> use my-blog
+```mongod --port 27017 --dbpath C:\MongoDB\data\db```
+or
+```mongosh``` (ubuntu)
+or
+```mongo```
+
+```use my-blog```
 switched to db my-blog
+
+```
 > db.articles.insert([{
 ... name: 'learn-react',
 ... upvotes: 0,
@@ -15,6 +21,7 @@ switched to db my-blog
 ... upvotes: 0,
 ... comments: [],
 ... }])
+```
 BulkWriteResult({
         "writeErrors" : [ ],
         "writeConcernErrors" : [ ],
@@ -25,11 +32,13 @@ BulkWriteResult({
         "nRemoved" : 0,
         "upserted" : [ ]
 })
-> db.articles.find({})
+
+```db.articles.find({})```
 { "_id" : ObjectId("630f39c766de2d1b89d3a348"), "name" : "learn-react", "upvotes" : 0, "comments" : [ ] }
 { "_id" : ObjectId("630f39c766de2d1b89d3a349"), "name" : "learn-node", "upvotes" : 0, "comments" : [ ] }
 { "_id" : ObjectId("630f39c766de2d1b89d3a34a"), "name" : "my-thoughts-on-resumes", "upvotes" : 0, "comments" : [ ] }
-> db.articles.find({}).pretty()
+
+```db.articles.find({}).pretty()```
 {
         "_id" : ObjectId("630f39c766de2d1b89d3a348"),
         "name" : "learn-react",
@@ -48,18 +57,17 @@ BulkWriteResult({
         "upvotes" : 0,
         "comments" : [ ]
 }
-> db.articles.find({name: 'learn-react'}).pretty()
+```db.articles.find({name: 'learn-react'}).pretty()```
 {
         "_id" : ObjectId("630f39c766de2d1b89d3a348"),
         "name" : "learn-react",
         "upvotes" : 0,
         "comments" : [ ]
 }
-> db.articles.findOne({name: 'learn-react'})
+```db.articles.findOne({name: 'learn-react'})```
 {
         "_id" : ObjectId("630f39c766de2d1b89d3a348"),
         "name" : "learn-react",
         "upvotes" : 0,
         "comments" : [ ]
 }
->
